@@ -13,18 +13,19 @@
 function handValue(hand) {
   let total = 0;
   for (var i = 0; i < hand.length; i++) {
-    if ((hand[i] === "J") || (hand[i] === "Q") || (hand[i] === "K")) {
-      total += 10;
+    if (isNaN(hand[i])) {
+      if (hand[i] !== "A") {
+        total += 10;
+      }
     } else if (parseInt(hand[i]) <= 10 && parseInt(hand[i]) >= 2) {
       total += parseInt(hand[i]);
-    } else {
-      for (var i = 0; i < hand.length; i++) {
-        if (hand[i] === "A" && total < 11) {
-          total += 11;
-        } else if (hand[i] === "A" && total > 10) {
-          total += 1;
-        }
-      }
+    }
+  }
+  for (var i = 0; i < hand.length; i++) {
+    if (hand[i] === "A" && total <= 10) {
+      total += 11;
+    } else if (hand[i] === "A" && total > 10) {
+      total += 1;
     }
   }
   return total;
@@ -37,3 +38,25 @@ K, Q, J ==> Worth 10
 A       ==> Worth 1 or 11
 
 */
+
+
+//***********First pass that works---sometimes**************
+// function handValue(hand) {
+//   let total = 0;
+//   for (var i = 0; i < hand.length; i++) {
+//     if ((hand[i] === "J") || (hand[i] === "Q") || (hand[i] === "K")) {
+//       total += 10;
+//     } else if (parseInt(hand[i]) <= 10 && parseInt(hand[i]) >= 2) {
+//       total += parseInt(hand[i]);
+//     } else {
+//       for (var i = 0; i < hand.length; i++) {
+//         if (hand[i] === "A" && total <= 10) {
+//           total += 11;
+//         } else if (hand[i] === "A" && total > 10) {
+//           total += 1;
+//         }
+//       }
+//     }
+//   }
+//   return total;
+// }
