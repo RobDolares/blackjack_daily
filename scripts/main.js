@@ -10,6 +10,8 @@
 */
 
 
+
+
 function handValue(hand) {
   let total = 0;
 
@@ -32,7 +34,6 @@ function handValue(hand) {
 
 
 
-
 /* -----  Hints ------
 
 1..10   ==> Worth face value (1 = 1, 4 = 4, etc)
@@ -40,3 +41,38 @@ K, Q, J ==> Worth 10
 A       ==> Worth 1 or 11
 
 */
+
+// ************Different Direction**************
+
+// function handValue(hand) {
+//   let total = 0;
+//   var aces = [];
+//
+//   let cardValue = function() {
+//     if ((hand[i] === "J") || (hand[i] === "Q") || (hand[i] === "K")) {
+//       return [10];
+//     } else if (hand[i] === "A") {
+//       return [1, 11];
+//     } else {
+//       return parseInt(hand[i]);
+//     }
+//   }
+//
+//   for (var i = 0; i < hand.length; i++) {
+//     let value = cardValue(hand[i]);
+//     if (value.length === 1) { //Length of array from cardValue fxn
+//       total += value[0];
+//     } else {
+//       aces.push(value);
+//     }
+//   }
+//
+//   for (var j = 0; j < aces.length; j++) {
+//     if (total + aces[j].value[1] <= 21) {
+//       total + aces[j].value[1];
+//     } else {
+//       total + aces[j].value[0];
+//     }
+//   }
+//   return total;
+// }
