@@ -10,13 +10,25 @@
 */
 
 
-function handValue (hand) {
-
-
-
-  return;
+function handValue(hand) {
+  let total = 0;
+  for (var i = 0; i < hand.length; i++) {
+    if ((hand[i] === "J") || (hand[i] === "Q") || (hand[i] === "K")) {
+      total += 10;
+    } else if (parseInt(hand[i]) <= 10 && parseInt(hand[i]) >= 2) {
+      total += parseInt(hand[i]);
+    } else {
+      for (var i = 0; i < hand.length; i++) {
+        if (hand[i] === "A" && total <= 11) {
+          total += 11;
+        } else if (hand[i] === "A" && total >= 11) {
+          total += 1;
+        }
+      }
+    }
+  }
+  return total;
 }
-
 
 /* -----  Hints ------
 
