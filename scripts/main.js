@@ -19,9 +19,9 @@ function handValue(hand) {
       total += parseInt(hand[i]);
     } else {
       for (var i = 0; i < hand.length; i++) {
-        if (hand[i] === "A" && total <= 11) {
+        if (hand[i] === "A" && total < 11) {
           total += 11;
-        } else if (hand[i] === "A" && total >= 11) {
+        } else if (hand[i] === "A" && total > 10) {
           total += 1;
         }
       }
