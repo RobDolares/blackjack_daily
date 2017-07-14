@@ -10,17 +10,8 @@
 */
 
 
-
-
 function handValue(hand) {
   let total = 0;
-  let aceCount = 0;
-
-  for (var i = 0; i < hand.length; i++) {
-    if (hand[i] === 'A') {
-      aceCount++;
-    }
-  }
 
   for (var i = 0; i < hand.length; i++) {
     if ((hand[i] === "J") || (hand[i] === "Q") || (hand[i] === "K")) {
@@ -30,13 +21,14 @@ function handValue(hand) {
     }
   }
   for (var i = 0; i < hand.length; i++) {
-        if (hand[i] === "A" && total <= 10) {
-          total += 11;
-        } else if (hand[i] === "A" && total > 10) {
-          total += 1;
-        }
-      }return total;
+    if (hand[i] === "A" && total <= 10) {
+      total += 11;
+    } else if (hand[i] === "A" && total > 10) {
+      total += 1;
+    }
   }
+  return total;
+}
 
 
 
